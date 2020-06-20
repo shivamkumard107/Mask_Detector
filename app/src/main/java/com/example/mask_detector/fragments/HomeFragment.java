@@ -7,13 +7,17 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 
 import androidx.cardview.widget.CardView;
 import androidx.fragment.app.Fragment;
 
 import com.example.mask_detector.R;
+import com.example.mask_detector.activities.ReadArticleActivity;
+import com.google.firebase.auth.FirebaseAuth;
 
 public class HomeFragment extends Fragment {
+    TextView welcome;
     private CardView cv1, cv2, cv3;
 
     @Override
@@ -28,8 +32,8 @@ public class HomeFragment extends Fragment {
         cv1.setOnClickListener(appointment -> {
 
         });
-        cv3.setOnClickListener(read -> {
-
+        cv2.setOnClickListener(read -> {
+            startActivity(new Intent(getContext(), ReadArticleActivity.class));
         });
         v.findViewById(R.id.helpCard4).setOnClickListener(paytm -> {
 //            net.one97.paytm
@@ -43,6 +47,13 @@ public class HomeFragment extends Fragment {
                 openWebsiteOnWeb("https://paytm.com/");
             }
         });
+        welcome = v.findViewById(R.id.welcome);
+        String name = FirebaseAuth.getInstance().getCurrentUser().getPhoneNumber();
+        if (name == null)
+            welcome.setText("WELCOME, ".concat("User"));
+        else
+            welcome.setText("WELCOME, ".concat(name));
+
         return v;
     }
 

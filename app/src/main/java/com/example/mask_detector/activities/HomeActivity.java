@@ -1,15 +1,18 @@
 package com.example.mask_detector.activities;
 
 import android.os.Bundle;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 
 import com.example.mask_detector.R;
+import com.example.mask_detector.fragments.DocumentsFragment;
 import com.example.mask_detector.fragments.HomeFragment;
 import com.example.mask_detector.fragments.ProfileFragment;
 import com.example.mask_detector.fragments.ScanQRFragment;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.google.firebase.auth.FirebaseAuth;
 
 public class HomeActivity extends AppCompatActivity {
 
@@ -19,6 +22,9 @@ public class HomeActivity extends AppCompatActivity {
                 switch (item.getItemId()) {
                     case R.id.nav_home:
                         selectedFragment = new HomeFragment();
+                        break;
+                    case R.id.nav_doc:
+                        selectedFragment = new DocumentsFragment();
                         break;
                     case R.id.nav_favorites:
                         selectedFragment = new ScanQRFragment();
@@ -38,6 +44,12 @@ public class HomeActivity extends AppCompatActivity {
         setContentView(R.layout.activity_home);
         BottomNavigationView bottomNav = findViewById(R.id.bottom_navigation);
         bottomNav.setOnNavigationItemSelectedListener(navListener);
+
+        if (FirebaseAuth.getInstance().getCurrentUser() == null) {
+            Toast.makeText(this, "User null", Toast.LENGTH_SHORT).show();
+        } else {
+            Toast.makeText(this, FirebaseAuth.getInstance().getCurrentUser().getPhoneNumber(), Toast.LENGTH_SHORT).show();
+        }
         //I added this if statement to keep the selected fragment when rotating the device
         if (savedInstanceState == null) {
             getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,

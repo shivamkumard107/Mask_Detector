@@ -30,7 +30,6 @@ public class GetQrDocActivity extends AppCompatActivity {
     private void loadDocument(String url) {
         Picasso.get()
                 .load(url)
-                .placeholder(R.mipmap.ic_launcher)
                 .fit()
                 .centerCrop()
                 .into(ivDoc, new Callback() {
