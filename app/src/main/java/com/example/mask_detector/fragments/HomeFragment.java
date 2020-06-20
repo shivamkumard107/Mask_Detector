@@ -18,9 +18,9 @@ public class HomeFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View v = inflater.inflate(R.layout.fragment_home, container, false);
-        cv1 = v.findViewById(R.id.cardView2);
-        cv2 = v.findViewById(R.id.cardView3);
-        cv3 = v.findViewById(R.id.helpCard3);
+        cv1 = v.findViewById(R.id.appointmentcard);
+        cv2 = v.findViewById(R.id.blogcard);
+        cv3 = v.findViewById(R.id.articlecard);
 
         cv1.setOnClickListener(appointment ->{
 
