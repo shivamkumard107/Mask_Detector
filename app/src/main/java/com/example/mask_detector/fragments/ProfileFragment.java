@@ -8,9 +8,11 @@ import android.view.ViewGroup;
 
 import androidx.fragment.app.Fragment;
 
+import com.example.mask_detector.About_us;
 import com.example.mask_detector.R;
 import com.example.mask_detector.activities.ShowDocActivity;
 import com.example.mask_detector.activities.UploadDocActivity;
+import com.google.android.material.card.MaterialCardView;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -58,17 +60,19 @@ public class ProfileFragment extends Fragment {
             mParam2 = getArguments().getString(ARG_PARAM2);
         }
     }
-
+    MaterialCardView aboutus;
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View v = inflater.inflate(R.layout.fragment_profile, container, false);
-        v.findViewById(R.id.bt_upload).setOnClickListener(upload -> {
+        v.findViewById(R.id.cardSettings).setOnClickListener(upload -> {
             startActivity(new Intent(getContext(), UploadDocActivity.class));
         });
-        v.findViewById(R.id.bt_get_doc).setOnClickListener(doc -> {
+        v.findViewById(R.id.cardSavedPosts).setOnClickListener(doc -> {
             startActivity(new Intent(getContext(), ShowDocActivity.class));
         });
+        aboutus = v.findViewById(R.id.cardAbout);
+        aboutus.setOnClickListener(v1 -> startActivity(new Intent(getContext(), About_us.class)));
         return v;
     }
 }
