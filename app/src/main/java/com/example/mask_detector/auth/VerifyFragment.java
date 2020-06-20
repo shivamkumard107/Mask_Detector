@@ -1,20 +1,21 @@
-package com.example.mask_detector;
+package com.example.mask_detector.auth;
 
+import android.content.Intent;
 import android.os.Bundle;
-
-import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
-import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentManager;
-import androidx.fragment.app.FragmentTransaction;
-
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.Toast;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import androidx.fragment.app.Fragment;
+
 import com.alimuzaffar.lib.pin.PinEntryEditText;
+import com.example.mask_detector.R;
+import com.example.mask_detector.activities.HomeActivity;
+import com.example.mask_detector.model.Constants;
 import com.google.android.gms.tasks.TaskExecutors;
 import com.google.firebase.FirebaseException;
 import com.google.firebase.auth.FirebaseAuth;
@@ -52,11 +53,11 @@ public class VerifyFragment extends Fragment {
             Toast.makeText(getContext(), "Verification Code Sent", Toast.LENGTH_SHORT).show();
         }
 
-        @Override
-        public void onCodeAutoRetrievalTimeOut(@NonNull String s) {
-            super.onCodeAutoRetrievalTimeOut(s);
-            Toast.makeText(getContext(), "Auto Retrieval Timeout, Enter code manually", Toast.LENGTH_SHORT).show();
-        }
+//        @Override
+//        public void onCodeAutoRetrievalTimeOut(@NonNull String s) {
+//            super.onCodeAutoRetrievalTimeOut(s);
+//            Toast.makeText(getContext(), "Auto Retrieval Timeout, Enter code manually", Toast.LENGTH_SHORT).show();
+//        }
     };
 
     @Override
@@ -114,15 +115,8 @@ public class VerifyFragment extends Fragment {
         mAuth.signInWithCredential(credential)
                 .addOnCompleteListener(task -> {
                     if (task.isSuccessful()) {
-                        HomeFragment registeruserFragment = new HomeFragment();
-                        Bundle bundle = new Bundle();
-                        bundle.putString(Constants.PHONE_NUMBER, phoneNumber);
-                        registeruserFragment.setArguments(bundle);
-                        FragmentManager fragmentManager = getActivity().getSupportFragmentManager();
-                        fragmentManager.popBackStack(null, FragmentManager.POP_BACK_STACK_INCLUSIVE);
-                        FragmentTransaction transaction = fragmentManager.beginTransaction();
-                        transaction.replace(R.id.container, registeruserFragment);
-                        transaction.commit();
+                        startActivity(new Intent(getContext(), HomeActivity.class));
+                        getActivity().finish();
                     }
                 });
     }
