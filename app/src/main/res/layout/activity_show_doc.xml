@@ -3,20 +3,21 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <Button
-        android:id="@+id/bt_upload"
+    <ProgressBar
+        android:id="@+id/progress_circle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_centerInParent="true"
-        android:text="Upload Document"
-        android:textSize="18sp" />
-
-    <Button
-        android:id="@+id/bt_get_doc"
+        android:layout_centerInParent="true" />
+    <TextView
+        android:id="@+id/nodata"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@id/bt_upload"
+        android:text="No Medical Data Uploaded"
         android:layout_centerInParent="true"
-        android:text="View Medical Documents"
-        android:textSize="18sp" />
+        android:visibility="gone"
+        />
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recycler_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
 </RelativeLayout>

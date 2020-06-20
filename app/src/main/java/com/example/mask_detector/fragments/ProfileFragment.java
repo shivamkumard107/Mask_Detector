@@ -1,14 +1,16 @@
 package com.example.mask_detector.fragments;
 
+import android.content.Intent;
 import android.os.Bundle;
-
-import androidx.fragment.app.Fragment;
-
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import androidx.fragment.app.Fragment;
+
 import com.example.mask_detector.R;
+import com.example.mask_detector.ShowDocActivity;
+import com.example.mask_detector.UploadDocActivity;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -60,7 +62,13 @@ public class ProfileFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_profile, container, false);
+        View v = inflater.inflate(R.layout.fragment_profile, container, false);
+        v.findViewById(R.id.bt_upload).setOnClickListener(upload -> {
+            startActivity(new Intent(getContext(), UploadDocActivity.class));
+        });
+        v.findViewById(R.id.bt_get_doc).setOnClickListener(doc -> {
+            startActivity(new Intent(getContext(), ShowDocActivity.class));
+        });
+        return v;
     }
 }
