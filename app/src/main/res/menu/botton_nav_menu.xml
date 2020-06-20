@@ -13,6 +13,10 @@
         android:icon="@drawable/ic_launcher_foreground"
         android:title="Scan" />
     <item
+        android:id="@+id/nav_media"
+        android:icon="@drawable/ic_launcher_foreground"
+        android:title="Media" />
+    <item
         android:id="@+id/nav_search"
         android:icon="@drawable/ic_launcher_foreground"
         android:title="Profile" />

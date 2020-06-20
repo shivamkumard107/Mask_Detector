@@ -9,6 +9,7 @@ import androidx.fragment.app.Fragment;
 import com.example.mask_detector.R;
 import com.example.mask_detector.fragments.DocumentsFragment;
 import com.example.mask_detector.fragments.HomeFragment;
+import com.example.mask_detector.fragments.MediaFragment;
 import com.example.mask_detector.fragments.ProfileFragment;
 import com.example.mask_detector.fragments.ScanQRFragment;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
@@ -28,6 +29,9 @@ public class HomeActivity extends AppCompatActivity {
                         break;
                     case R.id.nav_favorites:
                         selectedFragment = new ScanQRFragment();
+                        break;
+                    case R.id.nav_media:
+                        selectedFragment = new MediaFragment();
                         break;
                     case R.id.nav_search:
                         selectedFragment = new ProfileFragment();

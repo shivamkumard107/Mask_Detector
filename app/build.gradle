@@ -64,5 +64,8 @@ dependencies {
     implementation 'com.journeyapps:zxing-android-embedded:3.2.0@aar'
     implementation 'me.dm7.barcodescanner:zxing:1.9'
 
+    files('libs/YouTubeAndroidPlayerApi.jar')
+    annotationProcessor 'com.github.bumptech.glide:compiler:4.11.0'
+
 
 }
