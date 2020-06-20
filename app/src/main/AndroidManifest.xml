@@ -12,7 +12,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".About_us"></activity>
+        <activity android:name=".activities.ReadArticle"></activity>
+        <activity android:name=".activities.ReadArticleActivity" />
+        <activity android:name=".About_us" />
         <activity android:name=".activities.GetQrDocActivity" />
         <activity android:name=".activities.ShareQRActivity" />
         <activity android:name=".activities.ShowDocActivity" />
@@ -23,7 +25,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".activities.UploadDocActivity"/>
+        <activity android:name=".activities.UploadDocActivity" />
         <activity android:name=".activities.MainActivity" />
         <activity android:name=".auth.Login" />
     </application>
