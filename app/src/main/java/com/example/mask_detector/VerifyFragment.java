@@ -114,7 +114,7 @@ public class VerifyFragment extends Fragment {
         mAuth.signInWithCredential(credential)
                 .addOnCompleteListener(task -> {
                     if (task.isSuccessful()) {
-                        RegisterUserFragment registeruserFragment = new RegisterUserFragment();
+                        HomeFragment registeruserFragment = new HomeFragment();
                         Bundle bundle = new Bundle();
                         bundle.putString(Constants.PHONE_NUMBER, phoneNumber);
                         registeruserFragment.setArguments(bundle);
