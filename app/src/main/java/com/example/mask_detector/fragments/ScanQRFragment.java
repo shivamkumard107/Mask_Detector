@@ -81,9 +81,7 @@ public class ScanQRFragment extends Fragment implements ZXingScannerView.ResultH
         int currentApiVersion = Build.VERSION.SDK_INT;
 
         if (currentApiVersion >= Build.VERSION_CODES.M) {
-            if (checkPermission()) {
-                Toast.makeText(getContext(), "Permission already granted!", Toast.LENGTH_LONG).show();
-            } else {
+            if (!checkPermission()) {
                 requestPermission();
             }
         }
@@ -109,20 +107,6 @@ public class ScanQRFragment extends Fragment implements ZXingScannerView.ResultH
         super.onResume();
         scannerView.setResultHandler(this);
         scannerView.startCamera();
-
-//        int currentapiVersion = android.os.Build.VERSION.SDK_INT;
-//        if (currentapiVersion >= android.os.Build.VERSION_CODES.M) {
-//            if (checkPermission()) {
-//                if(scannerView == null) {
-//                    scannerView = new ZXingScannerView(getContext());
-//                    onCreateView(scannerView, R.id.fragment_container, null);
-//                }
-//                scannerView.setResultHandler(this);
-//                scannerView.startCamera();
-//            } else {
-//                requestPermission();
-//            }
-//        }
     }
 
     @Override

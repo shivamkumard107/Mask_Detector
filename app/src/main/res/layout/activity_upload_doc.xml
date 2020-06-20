@@ -14,9 +14,17 @@
         android:id="@+id/edit_text_file_name"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_below="@+id/button_choose_image"
         android:layout_marginStart="16dp"
-        android:layout_toEndOf="@+id/button_choose_image"
-        android:hint="Enter file name" />
+        android:layout_marginEnd="16dp"
+        android:hint="@string/enter_report_type" />
+
+    <ImageView
+        android:id="@+id/camera"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:src="@drawable/ic_camera" />
 
     <ImageView
         android:id="@+id/image_view"
