@@ -6,8 +6,6 @@ import android.os.Bundle;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentManager;
-import androidx.fragment.app.FragmentTransaction;
 
 import android.view.LayoutInflater;
 import android.view.View;
@@ -16,8 +14,8 @@ import android.widget.Button;
 import android.widget.Toast;
 
 import com.alimuzaffar.lib.pin.PinEntryEditText;
-import com.example.mask_detector.Constants;
-import com.example.mask_detector.HomeActivity;
+import com.example.model.Constants;
+import com.example.activities.HomeActivity;
 import com.example.mask_detector.R;
 import com.google.android.gms.tasks.TaskExecutors;
 import com.google.firebase.FirebaseException;

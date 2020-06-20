@@ -1,4 +1,4 @@
-package com.example.mask_detector;
+package com.example.activities;
 
 
 import android.content.ContentResolver;
@@ -18,6 +18,8 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.mask_detector.R;
+import com.example.model.Upload;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;

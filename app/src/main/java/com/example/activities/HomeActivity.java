@@ -1,10 +1,11 @@
-package com.example.mask_detector;
+package com.example.activities;
 
 import android.os.Bundle;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 
+import com.example.mask_detector.R;
 import com.example.mask_detector.fragments.HomeFragment;
 import com.example.mask_detector.fragments.ProfileFragment;
 import com.example.mask_detector.fragments.ScanQRFragment;

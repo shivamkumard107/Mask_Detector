@@ -1,4 +1,4 @@
-package com.example.mask_detector;
+package com.example.model;
 
 import com.google.firebase.database.Exclude;
 

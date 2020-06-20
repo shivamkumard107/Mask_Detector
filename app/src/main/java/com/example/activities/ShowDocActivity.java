@@ -1,4 +1,4 @@
-package com.example.mask_detector;
+package com.example.activities;
 
 
 import android.os.Bundle;
@@ -11,6 +11,9 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.adapter.ImageAdapter;
+import com.example.mask_detector.R;
+import com.example.model.Upload;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;

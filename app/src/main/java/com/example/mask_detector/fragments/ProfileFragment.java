@@ -9,8 +9,8 @@ import android.view.ViewGroup;
 import androidx.fragment.app.Fragment;
 
 import com.example.mask_detector.R;
-import com.example.mask_detector.ShowDocActivity;
-import com.example.mask_detector.UploadDocActivity;
+import com.example.activities.ShowDocActivity;
+import com.example.activities.UploadDocActivity;
 
 /**
  * A simple {@link Fragment} subclass.

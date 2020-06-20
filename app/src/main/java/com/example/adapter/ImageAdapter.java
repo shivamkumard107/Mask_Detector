@@ -1,4 +1,4 @@
-package com.example.mask_detector;
+package com.example.adapter;
 
 import android.content.Context;
 import android.view.ContextMenu;
@@ -13,6 +13,8 @@ import android.widget.Toast;
 
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.mask_detector.R;
+import com.example.model.Upload;
 import com.squareup.picasso.Picasso;
 
 import java.util.List;
