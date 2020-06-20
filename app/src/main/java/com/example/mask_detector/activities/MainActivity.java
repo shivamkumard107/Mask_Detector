@@ -1,4 +1,4 @@
-package com.example.activities;
+package com.example.mask_detector.activities;
 
 import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
@@ -7,7 +7,6 @@ import androidx.drawerlayout.widget.DrawerLayout;
 
 import android.os.Bundle;
 import android.view.Menu;
-import android.view.View;
 
 import com.example.mask_detector.R;
 import com.google.android.material.navigation.NavigationView;

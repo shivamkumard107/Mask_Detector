@@ -1,4 +1,4 @@
-package com.example.adapter;
+package com.example.mask_detector.adapter;
 
 import android.content.Context;
 import android.view.ContextMenu;
@@ -14,7 +14,7 @@ import android.widget.TextView;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.mask_detector.R;
-import com.example.model.Upload;
+import com.example.mask_detector.model.Upload;
 import com.squareup.picasso.Callback;
 import com.squareup.picasso.Picasso;
 
@@ -103,7 +103,7 @@ public class ImageAdapter extends RecyclerView.Adapter<ImageAdapter.ImageViewHol
         @Override
         public void onCreateContextMenu(ContextMenu menu, View v, ContextMenu.ContextMenuInfo menuInfo) {
             menu.setHeaderTitle("Select Action");
-            MenuItem doWhatever = menu.add(Menu.NONE, 1, 1, "Do whatever");
+            MenuItem doWhatever = menu.add(Menu.NONE, 1, 1, "Share Document");
             MenuItem delete = menu.add(Menu.NONE, 2, 2, "Delete");
             doWhatever.setOnMenuItemClickListener(this);
             delete.setOnMenuItemClickListener(this);

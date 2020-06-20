@@ -14,8 +14,8 @@ import android.widget.Button;
 import android.widget.Toast;
 
 import com.alimuzaffar.lib.pin.PinEntryEditText;
-import com.example.model.Constants;
-import com.example.activities.HomeActivity;
+import com.example.mask_detector.model.Constants;
+import com.example.mask_detector.activities.HomeActivity;
 import com.example.mask_detector.R;
 import com.google.android.gms.tasks.TaskExecutors;
 import com.google.firebase.FirebaseException;

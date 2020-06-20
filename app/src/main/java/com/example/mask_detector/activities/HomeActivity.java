@@ -1,4 +1,4 @@
-package com.example.activities;
+package com.example.mask_detector.activities;
 
 import android.os.Bundle;
 

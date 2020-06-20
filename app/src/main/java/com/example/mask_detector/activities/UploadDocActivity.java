@@ -1,4 +1,4 @@
-package com.example.activities;
+package com.example.mask_detector.activities;
 
 
 import android.content.ContentResolver;
@@ -19,7 +19,7 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.mask_detector.R;
-import com.example.model.Upload;
+import com.example.mask_detector.model.Upload;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
@@ -131,8 +131,6 @@ public class UploadDocActivity extends AppCompatActivity {
                                                     uri.toString());
                                             String uploadId = mDatabaseRef.push().getKey();
                                             mDatabaseRef.child(uploadId).setValue(upload);
-                                            Toast.makeText(UploadDocActivity.this, uri.toString(), Toast.LENGTH_SHORT).show();
-                                            //createNewPost(imageUrl);
                                         }
                                     });
                                 }

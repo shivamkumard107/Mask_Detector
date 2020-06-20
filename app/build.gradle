@@ -58,4 +58,11 @@ dependencies {
 
     implementation 'com.android.support:multidex:1.0.3'
 
+
+//    Add Zxing library to generate barcode
+    implementation 'com.google.zxing:core:3.3.3'
+    implementation 'com.journeyapps:zxing-android-embedded:3.2.0@aar'
+    implementation 'me.dm7.barcodescanner:zxing:1.9'
+
+
 }

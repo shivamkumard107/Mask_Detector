@@ -1,6 +1,7 @@
-package com.example.activities;
+package com.example.mask_detector.activities;
 
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ProgressBar;
@@ -11,9 +12,9 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.adapter.ImageAdapter;
 import com.example.mask_detector.R;
-import com.example.model.Upload;
+import com.example.mask_detector.adapter.ImageAdapter;
+import com.example.mask_detector.model.Upload;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -84,7 +85,9 @@ public class ShowDocActivity extends AppCompatActivity implements ImageAdapter.O
 
     @Override
     public void onWhatEverClick(int position) {
-        Toast.makeText(this, "Whatever click at position: " + position, Toast.LENGTH_SHORT).show();
+        Intent i = new Intent(this, ShareQRActivity.class);
+        i.putExtra("url", mUploads.get(position).getImageUrl());
+        startActivity(i);
     }
 
     @Override
