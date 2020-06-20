@@ -1,4 +1,4 @@
-package com.example.mask_detector;
+package com.example.mask_detector.auth;
 
 import android.os.Bundle;
 
@@ -10,6 +10,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 
+import com.example.mask_detector.model.Constants;
+import com.example.mask_detector.R;
 import com.google.android.material.textfield.TextInputLayout;
 
 public class phoneNumberFragment extends Fragment {

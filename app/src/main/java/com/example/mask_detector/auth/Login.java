@@ -1,8 +1,10 @@
-package com.example.mask_detector;
+package com.example.mask_detector.auth;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+
+import com.example.mask_detector.R;
 
 public class Login extends AppCompatActivity {
 
