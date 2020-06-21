@@ -11,8 +11,11 @@ import android.widget.TextView;
 
 import androidx.cardview.widget.CardView;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
 
 import com.example.mask_detector.R;
+import com.example.mask_detector.activities.ShowDocActivity;
 import com.example.mask_detector.activities.SurveillanceActivity;
 import com.google.firebase.auth.FirebaseAuth;
 
@@ -27,13 +30,11 @@ public class HomeFragment extends Fragment {
         View v = inflater.inflate(R.layout.fragment_home, container, false);
         cv1 = v.findViewById(R.id.cardView2);
         cv2 = v.findViewById(R.id.cardView3);
-        cv3 = v.findViewById(R.id.helpCard3);
-
         cv1.setOnClickListener(appointment -> {
             startActivity(new Intent(getContext(), SurveillanceActivity.class));
         });
         cv2.setOnClickListener(read -> {
-//            startActivity(new Intent(getContext(), ReadArticleActivity.class));
+            startActivity(new Intent(getContext(), ShowDocActivity.class));
         });
         v.findViewById(R.id.helpCard4).setOnClickListener(paytm -> {
 //            net.one97.paytm
@@ -46,6 +47,10 @@ public class HomeFragment extends Fragment {
             } else {
                 openWebsiteOnWeb("https://paytm.com/");
             }
+        });
+        v.findViewById(R.id.helpCard5).setOnClickListener(help -> {
+            Intent intent = new Intent(Intent.ACTION_CALL, Uri.parse("tel:" + "1075"));
+            startActivity(intent);
         });
         welcome = v.findViewById(R.id.welcome);
         if (FirebaseAuth.getInstance().getCurrentUser() != null) {

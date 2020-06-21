@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -44,7 +43,7 @@
         android:layout_height="wrap_content"
         android:layout_marginBottom="16dp"
         android:alpha="0.9"
-        android:text="Welcome to Naam Sochlo"
+        android:text="Welcome to "
         app:layout_constraintBottom_toTopOf="@+id/tvBody"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -56,7 +55,7 @@
         style="@style/BodyText"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:text="Wanna remain out of Police matters?\nWear a mask"
+        android:text="Minimizing the spread of infections by going paperless.\n Using Machine Learning to monitor public surveillance cameras"
         app:layout_constraintBottom_toTopOf="@+id/guideline2"
         app:layout_constraintEnd_toEndOf="@+id/tvHeader"
         app:layout_constraintHorizontal_bias="0.0"

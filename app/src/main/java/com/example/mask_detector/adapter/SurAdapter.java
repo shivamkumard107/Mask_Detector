@@ -75,7 +75,7 @@ public class SurAdapter extends RecyclerView.Adapter<SurAdapter.ViewHolder> impl
 
                 break;
             case 3:
-                holder.connection.setText("Disconnected");
+                holder.connection.setText("Unavailable");
                 holder.ivconnection.setImageResource(R.drawable.ic_alert);
                 break;
 

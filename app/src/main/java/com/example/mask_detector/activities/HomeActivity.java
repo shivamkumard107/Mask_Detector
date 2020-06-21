@@ -1,5 +1,6 @@
 package com.example.mask_detector.activities;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Toast;
 
@@ -7,6 +8,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 
 import com.example.mask_detector.R;
+import com.example.mask_detector.auth.Login;
 import com.example.mask_detector.fragments.DocumentsFragment;
 import com.example.mask_detector.fragments.HomeFragment;
 import com.example.mask_detector.fragments.MediaFragment;
@@ -50,7 +52,8 @@ public class HomeActivity extends AppCompatActivity {
         bottomNav.setOnNavigationItemSelectedListener(navListener);
 
         if (FirebaseAuth.getInstance().getCurrentUser() == null) {
-            Toast.makeText(this, "User null", Toast.LENGTH_SHORT).show();
+            startActivity(new Intent(this, Login.class));
+            finish();
         } else {
             Toast.makeText(this, FirebaseAuth.getInstance().getCurrentUser().getPhoneNumber(), Toast.LENGTH_SHORT).show();
         }

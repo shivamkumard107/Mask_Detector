@@ -106,7 +106,7 @@ public class SurDetailActivity extends AppCompatActivity {
 
                 break;
             case 3:
-                connection.setText("Disconnected");
+                connection.setText("Unavailable");
                 ivconnection.setImageResource(R.drawable.ic_alert);
                 break;
 

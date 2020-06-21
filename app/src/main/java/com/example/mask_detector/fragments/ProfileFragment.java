@@ -12,7 +12,9 @@ import com.example.mask_detector.About_us;
 import com.example.mask_detector.R;
 import com.example.mask_detector.activities.ShowDocActivity;
 import com.example.mask_detector.activities.UploadDocActivity;
+import com.example.mask_detector.auth.Login;
 import com.google.android.material.card.MaterialCardView;
+import com.google.firebase.auth.FirebaseAuth;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -25,7 +27,7 @@ public class ProfileFragment extends Fragment {
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
     private static final String ARG_PARAM2 = "param2";
-
+    MaterialCardView aboutus;
     // TODO: Rename and change types of parameters
     private String mParam1;
     private String mParam2;
@@ -60,7 +62,7 @@ public class ProfileFragment extends Fragment {
             mParam2 = getArguments().getString(ARG_PARAM2);
         }
     }
-    MaterialCardView aboutus;
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -70,6 +72,11 @@ public class ProfileFragment extends Fragment {
         });
         v.findViewById(R.id.cardSavedPosts).setOnClickListener(doc -> {
             startActivity(new Intent(getContext(), ShowDocActivity.class));
+        });
+        v.findViewById(R.id.ivLogout).setOnClickListener(logout -> {
+            FirebaseAuth.getInstance().signOut();
+            startActivity(new Intent(getContext(), Login.class));
+            getActivity().finish();
         });
         aboutus = v.findViewById(R.id.cardAbout);
         aboutus.setOnClickListener(v1 -> startActivity(new Intent(getContext(), About_us.class)));
