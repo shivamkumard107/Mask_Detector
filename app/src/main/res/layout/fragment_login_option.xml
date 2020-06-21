@@ -21,7 +21,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <!--<ImageView
+    <ImageView
         android:id="@+id/iv_space"
         android:layout_width="0dp"
         android:layout_height="0dp"
@@ -29,7 +29,7 @@
         android:layout_marginTop="16dp"
         android:layout_marginEnd="16dp"
         android:layout_marginBottom="16dp"
-        android:src=
+        android:src="@drawable/heart"
         app:layout_constraintBottom_toBottomOf="@id/iv_dots"
         app:layout_constraintDimensionRatio="16:9"
         app:layout_constraintEnd_toEndOf="@id/iv_dots"
@@ -43,7 +43,7 @@
         android:layout_height="wrap_content"
         android:layout_marginBottom="16dp"
         android:alpha="0.9"
-        android:text="Welcome to "
+        android:text="Welcome to Sehatmand"
         app:layout_constraintBottom_toTopOf="@+id/tvBody"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

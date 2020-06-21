@@ -49,7 +49,8 @@ public class HomeFragment extends Fragment {
             }
         });
         v.findViewById(R.id.helpCard5).setOnClickListener(help -> {
-            Intent intent = new Intent(Intent.ACTION_CALL, Uri.parse("tel:" + "1075"));
+            Intent intent = new Intent(Intent.ACTION_DIAL);
+            intent.setData(Uri.parse("tel:" + "1075"));
             startActivity(intent);
         });
         welcome = v.findViewById(R.id.welcome);

@@ -14,7 +14,7 @@ public class About_us extends AppCompatActivity {
 
     private String[] names = new String[]{"Shivam Kumar", "Arjun Anand", "Reetvik Chatterjee", "Harit Yadav"};
     private String[] descriptions = new String[]{"", "", "", "", "", "", ""};
-    private int[] images = new int[]{R.drawable.ic_avatar, R.drawable.arjun, R.drawable.ic_avatar, R.drawable.ic_avatar};
+    private int[] images = new int[]{R.drawable.shivam, R.drawable.arjun, R.drawable.reetvik, R.drawable.eveator};
 
     private ListView listView;
 
