@@ -1,9 +1,11 @@
 package com.example.mask_detector.activities;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Toast;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 
@@ -30,6 +32,21 @@ public class HomeActivity extends AppCompatActivity {
                         selectedFragment = new DocumentsFragment();
                         break;
                     case R.id.nav_favorites:
+                        new AlertDialog.Builder(this)
+                                .setTitle("Scanning QR...")
+                                .setMessage("Scan QR code that refer to an image medical document")
+                                // Specifying a listener allows you to take an action before dismissing the dialog.
+                                // The dialog is automatically dismissed when a dialog button is clicked.
+                                .setPositiveButton(android.R.string.ok, new DialogInterface.OnClickListener() {
+                                    public void onClick(DialogInterface dialog, int which) {
+                                        dialog.dismiss();
+                                    }
+                                })
+
+                                // A null listener allows the button to dismiss the dialog and take no further action.
+                                .setNegativeButton(android.R.string.cancel, null)
+                                .setIcon(android.R.drawable.ic_dialog_alert)
+                                .show();
                         selectedFragment = new ScanQRFragment();
                         break;
                     case R.id.nav_media:

@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.ProgressBar;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -35,11 +36,15 @@ public class GetQrDocActivity extends AppCompatActivity {
                 .into(ivDoc, new Callback() {
                     @Override
                     public void onSuccess() {
+                        Toast.makeText(GetQrDocActivity.this, "Image Document loaded successfully", Toast.LENGTH_SHORT).show();
                         pb.setVisibility(View.GONE);
                     }
 
                     @Override
                     public void onError(Exception e) {
+                        Toast.makeText(GetQrDocActivity.this, "QR code must refer to an image", Toast.LENGTH_LONG).show();
+                        Toast.makeText(GetQrDocActivity.this, "Showing dummy document for now", Toast.LENGTH_LONG).show();
+                        ivDoc.setImageResource(R.drawable.wb);
                         pb.setVisibility(View.GONE);
                     }
                 });

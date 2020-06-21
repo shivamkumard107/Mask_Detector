@@ -3,21 +3,32 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
+    <TextView
+        android:id="@+id/tv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        android:text="View your medical documents here. (Long press to delete or share doc QR)"
+        android:textSize="18dp"
+        android:textStyle="bold" />
+
     <ProgressBar
         android:id="@+id/progress_circle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerInParent="true" />
+
     <TextView
         android:id="@+id/nodata"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="No Medical Data Uploaded"
         android:layout_centerInParent="true"
-        android:visibility="gone"
-        />
+        android:text="No Medical Data Uploaded"
+        android:visibility="gone" />
+
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recycler_view"
         android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+        android:layout_height="match_parent"
+        android:layout_below="@+id/tv" />
 </RelativeLayout>

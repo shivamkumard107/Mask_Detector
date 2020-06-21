@@ -15,7 +15,7 @@
         app:cardElevation="10dp">
 
         <LinearLayout
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="10dp"
             android:orientation="vertical">
@@ -50,7 +50,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="10dp"
-                    android:text="Status: " />
+                    android:text="Camera Status: " />
 
                 <TextView
                     android:id="@+id/status"
@@ -75,7 +75,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="10dp"
-                    android:text="Connection: " />
+                    android:text="Camera Connection: " />
 
                 <TextView
                     android:id="@+id/connection"
@@ -97,6 +97,12 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Place: " />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="(Realtime) Video frames coming from camera analysed every hour and updated, showing people with or without mask"
+                android:textStyle="bold"/>
         </LinearLayout>
     </androidx.cardview.widget.CardView>
 
