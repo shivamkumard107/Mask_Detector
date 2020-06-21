@@ -12,7 +12,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".activities.ReadContentActivity"></activity>
+        <activity android:name=".activities.SurDetailActivity"></activity>
+        <activity android:name=".activities.SurveillanceActivity" />
+        <activity android:name=".activities.ReadContentActivity" />
         <activity android:name=".activities.ShowRecommendedActivity" />
         <activity android:name=".activities.AllContentActivity" />
         <activity android:name=".activities.ReadArticle" />

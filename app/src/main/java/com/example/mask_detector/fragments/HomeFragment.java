@@ -14,6 +14,7 @@ import androidx.fragment.app.Fragment;
 
 import com.example.mask_detector.R;
 import com.example.mask_detector.activities.ReadArticleActivity;
+import com.example.mask_detector.activities.SurveillanceActivity;
 import com.google.firebase.auth.FirebaseAuth;
 
 public class HomeFragment extends Fragment {
@@ -30,7 +31,7 @@ public class HomeFragment extends Fragment {
         cv3 = v.findViewById(R.id.helpCard3);
 
         cv1.setOnClickListener(appointment -> {
-
+            startActivity(new Intent(getContext(), SurveillanceActivity.class));
         });
         cv2.setOnClickListener(read -> {
             startActivity(new Intent(getContext(), ReadArticleActivity.class));
