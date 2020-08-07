@@ -13,7 +13,14 @@
         android:roundIcon="@drawable/heart"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".activities.SurDetailActivity"></activity>
+        <activity android:name=".activities.SplashActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".activities.SurDetailActivity" />
         <activity android:name=".activities.SurveillanceActivity" />
         <activity android:name=".activities.ReadContentActivity" />
         <activity android:name=".activities.ShowRecommendedActivity" />
@@ -25,11 +32,7 @@
         <activity android:name=".activities.ShareQRActivity" />
         <activity android:name=".activities.ShowDocActivity" />
         <activity android:name=".activities.HomeActivity">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
         <activity android:name=".activities.UploadDocActivity" />
         <activity android:name=".activities.MainActivity" />
