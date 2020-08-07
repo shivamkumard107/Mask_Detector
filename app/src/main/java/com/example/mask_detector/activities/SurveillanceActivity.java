@@ -1,5 +1,8 @@
 package com.example.mask_detector.activities;
 
+import android.content.Context;
+import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -123,4 +126,17 @@ public class SurveillanceActivity extends AppCompatActivity {
             }
         });
     }
+
+   /* @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        SharedPreferences pref = getPreferences(Context.MODE_PRIVATE);
+        String id = pref.getString("user", null);
+        if(id.equals("admin"))
+        {
+            startActivity(new Intent(SurveillanceActivity.this,HomeActivity.class));
+            finish();
+        }
+
+    }*/
 }

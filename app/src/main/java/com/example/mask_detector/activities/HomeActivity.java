@@ -1,7 +1,9 @@
 package com.example.mask_detector.activities;
 
+import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.widget.Toast;
 
@@ -68,10 +70,18 @@ public class HomeActivity extends AppCompatActivity {
         BottomNavigationView bottomNav = findViewById(R.id.bottom_navigation);
         bottomNav.setOnNavigationItemSelectedListener(navListener);
 
-        if (FirebaseAuth.getInstance().getCurrentUser() == null) {
+        SharedPreferences pref = getPreferences(Context.MODE_PRIVATE);
+        String id = pref.getString("user", null);
+
+       if (FirebaseAuth.getInstance().getCurrentUser() == null) {
             startActivity(new Intent(this, Login.class));
             finish();
-        } else {
+        }
+
+        /*if(id!=null && id.equals("admin")){
+            startActivity(new Intent(this,SurveillanceActivity.class));
+        }*/
+        else {
             Toast.makeText(this, FirebaseAuth.getInstance().getCurrentUser().getPhoneNumber(), Toast.LENGTH_SHORT).show();
         }
         //I added this if statement to keep the selected fragment when rotating the device

@@ -1,6 +1,8 @@
 package com.example.mask_detector.auth;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -15,6 +17,7 @@ import androidx.fragment.app.Fragment;
 import com.alimuzaffar.lib.pin.PinEntryEditText;
 import com.example.mask_detector.R;
 import com.example.mask_detector.activities.HomeActivity;
+import com.example.mask_detector.activities.SurveillanceActivity;
 import com.example.mask_detector.model.Constants;
 import com.google.android.gms.tasks.TaskExecutors;
 import com.google.firebase.FirebaseException;
@@ -114,8 +117,16 @@ public class VerifyFragment extends Fragment {
     private void signInWithCredential(PhoneAuthCredential credential) {
         mAuth.signInWithCredential(credential)
                 .addOnCompleteListener(task -> {
+                    SharedPreferences pref = getActivity().getPreferences(Context.MODE_PRIVATE);
+                    String id = pref.getString("user", null);
                     if (task.isSuccessful()) {
                         startActivity(new Intent(getContext(), HomeActivity.class));
+                        getActivity().finish();
+                    }
+                    if(task.isSuccessful() && id.equals("admin"))
+                    {
+                        Toast.makeText(getContext(), "admin", Toast.LENGTH_SHORT).show();
+                        startActivity(new Intent(getContext(), SurveillanceActivity.class));
                         getActivity().finish();
                     }
                 });
